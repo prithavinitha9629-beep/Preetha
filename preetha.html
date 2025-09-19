@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Portfolio — Your Name</title>
+  <meta name="description" content="Student portfolio template — projects, skills, education, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.025);
+      --radius: 14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071021 0%, #071827 60%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns: 320px 1fr;gap:28px;align-items:start}
+    header.site-header{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4cd7ff);display:flex;align-items:center;justify-content:center;color:#061224;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    h1.name{font-size:18px;margin:0}
+    p.role{margin:0;color:var(--muted);font-size:13px}
+
+    /* Sidebar */
+    aside.card{background:linear-gradient(180deg,var(--glass),var(--glass-2));border-radius:var(--radius);padding:18px;backdrop-filter: blur(6px);box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    .photo{width:100%;height:240px;border-radius:12px;background:linear-gradient(135deg,#16324b,#0b2536);display:flex;align-items:end;padding:16px;color:#cfe9ff}
+    .about h3{margin:12px 0 6px}
+    .meta{font-size:13px;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;font-size:13px}
+
+    /* Main */
+    main.card{background:transparent;padding:18px}
+    section{margin-bottom:20px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;min-height:120px}
+    .project h4{margin:0 0 8px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03)}
+
+    .edu-list,.exp-list{display:grid;gap:10px}
+    .edu-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01)}
+    .contact-row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4cd7ff);color:#051225;border:none;font-weight:600;cursor:pointer;text-decoration:none}
+
+    /* Footer */
+    footer{grid-column:1/-1;text-align:center;color:var(--muted);margin-top:22px}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .wrap{grid-template-columns:1fr; padding-bottom:40px}
+      .photo{height:160px}
+    }
+
+    /* Print */
+    @media print{
+      body{background: #fff;color:#000;padding:0}
+      .wrap{max-width:100%;display:block}
+      .card{background:transparent;box-shadow:none}
+      .logo{display:none}
+      .btn{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden>PS</div>
+        <div>
+          <h1 class="name">PREETHA.S</h1>
+          <p class="role">Bsc(CS)• 2024-2027</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn" id="downloadResume">Download Resume</button>
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="card" aria-label="sidebar">
+      <div class="photo" role="img" aria-label="Portrait placeholder">
+        <div>
+          <img src="" alt="PREETHA.S" style="width:250PX; height:180PX; object-fit:cover; border-radius:12px;">
+          <strong style="font-size:20px">PREETHA.S</strong>
+        </div>
+      </div>
+
+      <div class="about" style="margin-top:14px">
+        <h3>About</h3>
+        <p class="muted">>Hello! I’m an undergraduate Computer Science student specializing in Artificial Intelligence and Machine Learning. I am passionate about building intelligent systems that can solve real-world problems, from natural language processing to computer vision. I enjoy experimenting with neural networks, deep learning frameworks, and data-driven solutions.</p></p>
+
+        <h3 style="margin-top:12px">Contact</h3>
+        <p class="meta">Email: <a href="mailto:youremail@example.com">prithavinitha9629@gamil.com</a></p>
+        <p class="meta">Phone: +91 7358960223</p>
+        <p class="meta">Location:selva vinayagar kovil street ambakkam </p>
+
+        <h3 style="margin-top:12px">Skills</h3>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Python</div>
+          <div class="skill">React</div>
+          <div class="skill">Data Structures</div>
+        </div>
+
+        <h3 style="margin-top:12px">Languages</h3>
+        <p class="meta">ENGLISH (Fluent), TAMIL (Native)</p>
+
+        <h3 style="margin-top:12px">Links</h3>
+        <p class="metaa"><a href="https://github.com/Jagad
+        
+       PREETHA2007" target="_blank" rel="noopener">GitHub</a> •</p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="card">
+      <section id="projects">
+        <div class="section-title">
+          <h2 style="margin:0">Projects</h2>
+          <a href="#projects" class="muted" style="font-size:13px">Show all</a>
+        </div>
+        <div class="projects-grid">
+          <article class="project">
+            <h4>PROJECT ONE— STUDENT ID-CARD</h4>
+            <p class="muted">CREATING BASIC ID-CARD FOR STUDENT.</p>
+            <div style="margin-top:12px" class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <h4>PROJECT TWO — COLLEGE TIME-TABLE</h4>
+            <p class="muted">STUDENT REGULAR DAY ORDER TIME-TABLE.</p>
+            <div style="margin-top:12px" class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JAVA SCRIPT</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <h4>PROJECT THREE— REGISTRATION FORM FOR E-MAIL</h4>
+            <p class="muted">BASIC EMAIL REGISTRATION FORM.</p>
+            <div style="margin-top:12px" class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JAVA SCRIPT</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-title">
+          <h2 style="margin:0">Education</h2>
+        </div>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div/strong>
+            <div class="muted">UNIVERSITY OF MADRAS • 2024 — 2027</div>
+            <p class="muted" style="margin-top:6px">Relevant courses: PYTHON , JAVA , DATA STRUCTURE.</p>
+          </div>
+
+          <div class="edu-item">
+            <strong>High School </strong>
+            <div class="muted">GOVERNMEMNT HIGHER SEC. SCHOOL• 2022— 2024</div>
+            <p class="muted" style="margin-top:6px">PERCENTAGE SCORED-73%</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-title">
+          <h2 style="margin:0">COLLEGE</h2>
+          <div class="muted">2024-2027</div>
+        </div>
+        <div class="exp-list">
+          <div class="edu-item">
+            <strong>OM SHANTI ARTS AND SCIENCE COLLEGE</strong>
+            <p class="muted" style="margin-top:6px">I WAS CURRENTLY STUDYING MY FIRST DEGREE.</p>
+          </div>
+
+          <div class="edu-item">
+            <strong></strong>
+            <div class="muted"></div>
+            <p class="muted" style="margin-top:6px"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">
+          <h2 style="margin:0">Contact</h2>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+         <button class="btn"> <a href="content://com.android.providers.media.documents/document/image%3A1000082194">CERTIFICATE1</button></a>
+         <button class="btn"> <a href="content://com.android.providers.media.documents/document/image%3A1000082196"pppl>CERTIFICATE2</button></a> 
+         <button class="btn"> <a href="content://com.android.providers.media.documents/document/image%3A1000082195">CERTIFICATE3</button></a>
+         <button class="btn"> <a href="content://com.android.providers.media.documents/document/image%3A1000081159">DOWNLOAD RESUME</button></a>
+
+    </main>
+
+    <footer>
+     THANKYOU TO VISIT MY PORTFOLIO  ♥ • 
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle: simple light theme by inverting variables
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      if(document.documentElement.hasAttribute('data-light')){
+        document.documentElement.removeAttribute('data-light');
+      } else {
+        document.documentElement.setAttribute('data-light','');
+      }
+    });
+
+    // Light theme styles applied via attribute selector for simplicity
+    const style = document.createElement('style');
+    style.textContent = `:root[data-light] { --bg: #f8fafc; --card: #ffffff; --muted:#55606b; --accent:#7c5cff; color-scheme:light; }
+      :root[data-light] body { background: linear-gradient(180deg,#f8fbff 0%, #eef6ff 60%); color: #09202a }
+      :root[data-light] .logo{color:#fff}
+      :root[data-light] .card{box-shadow:0 6px 24px rgba(11,29,40,0.04)}
+    `;
+    document.head.appendChild(style);
+
+    // Download a simple resume (generated from the page content)
+    document.getElementById('downloadResume').addEventListener('click', () => {
+      const name = 'Your Name';
+      const email = 'youremail@example.com';
+      const phone = '+1 (555) 555-5555';
+      const resumeText = `${name}\n${email} | ${phone}\n\nProfessional Summary:\n- Short 1-2 line summary about yourself.\n\nEducation:\n- B.Sc. Computer Science, University Name (2022 - Present)\n\nProjects:\n- ToDo Web App — HTML/CSS/JS\n- Data Visualizer — React\n- ML Classifier — Python\n\nSkills:\n- HTML, CSS, JavaScript, Python, React\n`;
+      const blob = new Blob([resumeText], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = (name+' - Resume.txt');
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    function copyEmail(){
+      navigator.clipboard?.writeText('youremail@example.com').then(()=>{
+        alert('Email copied to clipboard');
+      }).catch(()=>{
+        prompt('Copy email:', 'youremail@example.com');
+      });
+    }
+  </script>
+</body>
+</html>
